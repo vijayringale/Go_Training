@@ -1,26 +1,18 @@
 
-
+// Write a recursive function to compute the factorial
 import "fmt"
-
-var factVal uint64 = 1
-
-var i int = 1
-var n int
-
-func factorial(n int) uint64 {
-	if n < 0 {
-		fmt.Print("Factorial of negative number doesn't exist.")
-	} else {
-		for i := 1; i <= n; i++ {
-			factVal *= uint64(i)
-		}
-
+func factorial(number int) int {
+	if number > 1 {
+		return number * factorial(number-1)
+	} else{
+		return 1
 	}
-	return factVal
 }
 
 func main() {
-	fmt.Print("Enter a positive integer between 0 - 50 : ")
-	fmt.Scan(&n)
-	fmt.Print("Factorial is: ", factorial(n))
+	var number int
+	fmt.Println("Enter the Number :")
+	fmt.Scanf("%d", &number)
+	fmt.Println("Factorial of number", number, "is :", factorial(number))
+
 }
