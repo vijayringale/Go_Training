@@ -10,16 +10,15 @@ import (
 // Write and call a function to reverse a string using for loop.
 // *********
 
-func Reverse(s string) (result string) {
 
-	for i:=len(s)-1; i>=0; i--{
-		result =result+string(s[i])
+func Reverse(s string) string {
+	str1 := []byte(s)
+
+	for i := 0; i < len(str1)/2; i++ {
+		str1[len(str1)-i-1], str1[i] = str1[i], str1[len(str1)-i-1]
 	}
-	fmt.Println(result)
-
-	return
-  }
-
-func main(){
-	Reverse("tnairox")
+	return string(str1)
+}
+func main() {
+	fmt.Println(Reverse("tnairox"))
 }
