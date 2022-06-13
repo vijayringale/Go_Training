@@ -1,4 +1,5 @@
-mport "fmt"
+// Writing A code Fore Marge Sorte
+import "fmt"
 
 func margSort(arr []int) []int {
 	if len(arr) < 2 {
