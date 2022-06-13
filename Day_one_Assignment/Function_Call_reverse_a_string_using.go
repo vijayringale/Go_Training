@@ -6,9 +6,9 @@ import (
 	"math"
 )
 
-*********
-Write and call a function to reverse a string using for loop.
-*********
+// *********
+// Write and call a function to reverse a string using for loop.
+// *********
 
 func Reverse(s string) (result string) {
 
