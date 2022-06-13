@@ -1,10 +1,4 @@
 
-package main
-
-import (
-	"fmt"
-	"math"
-)
 //*********
 /*Print the following pattern using loops and branching:
 1
@@ -14,21 +8,26 @@ import (
 5 9 12 14 15.
 */
 
-func main() {
-	var num = 5
-	lowerLeftCorner := num*(num-1)/2 + 1
-	lastInColumn := lowerLeftCorner
-	lastInRow := 1
-	for i, row := 1, 1; row <= num; i++ {
-		w := len(fmt.Sprint(lastInColumn))
-		if i < lastInRow {
-			fmt.Printf("%*d ", w, i)
-			lastInColumn++
-		} else {
-			fmt.Printf("%*d\n", w, i)
-			row++
-			lastInRow += row
-			lastInColumn = lowerLeftCorner
+package main
+
+import "fmt"
+
+func pattern(number int) {
+
+	for i := 1; i <= number; i++ {
+		var num = i
+		for j := 1; j <= i; j++ {
+			fmt.Print(num, " ")
+			num = num + number - j
 		}
+		fmt.Println()
 	}
+
 }
+func main() {
+	var number int
+	fmt.Println("Enter the Number :")
+	fmt.Scanf("%d", &number)
+	pattern(number)
+}
+
