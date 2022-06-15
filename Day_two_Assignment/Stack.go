@@ -28,7 +28,7 @@ func main() {
 	myStack.Push(700)
 	myStack.Push(800)
 	fmt.Println(myStack)
-	myStack.Pop(200)
+	myStack.Pop()
 	fmt.Println(myStack)
 
 }
