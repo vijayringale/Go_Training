@@ -2,27 +2,42 @@ package main
 
 import "fmt"
 
-func Arrsa_Addition(p int) {
+type Point struct {
+	a   int
+	b   int
+	arr []int
+	sum int
+}
 
-	var array [100]int
-	slice1 := array[1:20]
-	for i := 0; i >= p; i++ {
-		array = append(array, i)
-	}
-	slice1 := array[1:20]
-	var sum = 0
-	for _, i := range slice1 {
-		sum = sum + i
-		fmt.Println(sum)
+func runtine1(p Point) {
+	slice := p.arr[p.a:p.b]
+
+	for _, items := range slice {
+		fmt.Print(items)
+		p.sum = p.sum + items
 	}
 
+	fmt.Print("\n\n", p.sum, "\n")
 }
 
 func main() {
 
-	// Calling Goroutine
-	go Arrsa_Addition(100)
+	var array []int
 
-	// Calling normal function
-	Arrsa_Addition()
+	for i := 0; i < 100; i++ {
+		array = append(array, i)
+	}
+	fmt.Println(array)
+	p := Point{0, 20, array, 0}
+	k := Point{20, 40, array, 0}
+	w := Point{40, 60, array, 0}
+	q := Point{60, 80, array, 0}
+	z := Point{80, 99, array, 0}
+
+	go runtine1(p)
+	runtine1(k)
+	go runtine1(w)
+	runtine1(q)
+	runtine1(z)
+
 }
