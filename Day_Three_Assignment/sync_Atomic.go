@@ -12,7 +12,7 @@ import (
 var waittime sync.WaitGroup
 var atmvar int32
   
-func hike(S string) {
+func movie(S string) {
   
     for i := 1; i < 7; i++ {
   
